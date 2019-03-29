@@ -1,0 +1,27 @@
+<html>
+           <body>
+                                          <p>SecurityGroupID <input type = "text" name = "SecGroupID" /></p>
+                                          <p><input type = "submit" value = "ADD" /></p>
+					  <label for="secgroup">SecGroupID
+                                          <select name="secgroup" method="GET" action="/">
+						    <option  disabled selected>SecGroupID</option>
+                                                    <option value="{{secgroups[0]}}" selected>{{secgroups[0]}}</option>
+                                                      {% for secgroup in secgroups[1:] %}
+                                                          <option value="{{secgroup}}">{{secgroup}}</option>
+                                                      {% endfor %}
+					  </select> <br> 
+					           <label for="protocol">Protocols
+						   <select multiple="multiple" name="protocol" method="GET" action="/">
+					             <option  disabled selected>Protocols</option>
+                                                    <option input type="checkbox" value="{{protocols[0]}}" selected>{{protocols[0]}}</option>
+                                                      {% for protocol in protocols[1:] %}
+                                                          <option value="{{protocol}}">{{protocol}}</option>
+                                                      {% endfor %}
+                                          </select>
+                                          <p>Port <input type = "text" name = "portNumber" /></p>
+					  <p>CIDR <input type = "text" name = "cidr" /></p>
+
+
+					  <p><input type = "submit" value = "ADD" /></p>
+           </body>
+</html>

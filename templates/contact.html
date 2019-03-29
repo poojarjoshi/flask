@@ -1,0 +1,45 @@
+<html> 
+{% block content %}
+  <h2>Contact</h2>
+  <form action="{{ url_for('contact') }}" method=post>
+ 
+    {{ form.name.label }}
+    {{ form.name }}
+ 
+    {{ form.email.label }}
+    {{ form.email }}
+ 
+    {{ form.subject.label }}
+    {{ form.subject }}
+ 
+    {{ form.message.label }}
+    {{ form.message }}
+
+    {{form.secgroups.label }}
+    {{ form.secgroups }}
+    
+    {{form.protocols.label }}
+    {{ form.protocols }}
+
+    {{form.cidr.label }}
+    {{ form.cidr }}
+
+    <select multiple id="mymultiselect" name="mymultiselect">         
+	            <option value="1">this</option>       
+		            <option value="2">that</option>       
+			            <option value="3">other thing</option>
+    </select>
+
+
+    <select id="myform" name='category' multiple class="form-control"> 
+	                <option> Category 01 </option>
+			            <option> Category 01 </option>
+				                <option> Category 01 </option>
+    </select>
+
+    {{ form.submit }}
+    
+  </form>
+{% endblock %}
+    {{ form.result }}
+</html>

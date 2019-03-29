@@ -1,0 +1,14 @@
+from flask import Flask, render_template, request
+app = Flask(__name__)
+
+@app.route('/student')
+def student():
+    
+          secgroups = ['sg-5dfea124']
+          protocols = ['tcp','udp','all']
+          # result = request.form
+          return render_template("student.html",secgroups=secgroups,protocols=protocols)
+
+if __name__ == '__main__':
+ #app.run(debug = True)
+ app.run(host='0.0.0.0',port='8092')
